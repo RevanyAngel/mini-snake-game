@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Mini Snake Game</title>
+        <link href="styles.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <h1>MINI SNAKE GAME</h1>
+        <div id="score-board">Score: <span id="score">0</span></div>
+        
+        <div id="board" class="game-board"></div>
+
+        <div class="controls">
+            <div class="btn up" onclick="inputDir(0, -1)">▲</div>
+            <div class="btn left" onclick="inputDir(-1, 0)">◀</div>
+            <div class="btn down" onclick="inputDir(0, 1)">▼</div>
+            <div class="btn right" onclick="inputDir(1, 0)">▶</div>
+        </div>
+
+        <div id="game-over" class="hidden">
+            <h2 style="color: #ff0055; margin-top:0;">GAME OVER</h2>
+            <button class="restart-btn" onclick="startGame()">Main Lagi</button>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>

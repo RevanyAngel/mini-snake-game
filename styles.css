@@ -1,0 +1,82 @@
+body {
+    background-color: #0d1117; 
+    color: #fff;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    height: 100vh; 
+    margin: 0; 
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+    touch-action: none; 
+}
+h1 { 
+    margin: 5px 0; 
+    text-shadow: 0 0 10px #00ff88;
+    font-size: 1.5rem; 
+}
+
+#score-board { 
+    color: #aaa; 
+    margin-bottom: 10px; 
+}
+
+.game-board {
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+    width: min(300px, 90vw); 
+    aspect-ratio: 1 / 1; 
+    background: #161b22; border: 2px solid #30363d;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+}
+
+.pixel { 
+    border-radius: 3px; 
+    border: 1px solid #161b22; 
+}
+
+.snake { 
+    background: #00ff88; 
+    box-shadow: 0 0 10px #00ff88; 
+}
+
+.head { 
+    background: #fff; 
+    box-shadow: 0 0 15px #fff; 
+    z-index: 2; 
+    border-radius: 50%; 
+}
+
+.food { 
+    background: #ff0055; 
+    box-shadow: 0 0 15px #ff0055; 
+    border-radius: 50%; 
+    animation: pulse 1s infinite; 
+}
+
+@keyframes pulse { 0% { transform: scale(0.7); } 50% { transform: scale(1.1); } 100% { transform: scale(0.7); } }
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    gap: 10px; margin-top: 20px;
+}
+.btn {
+    background: rgba(48, 54, 61, 0.5); border: 1px solid #00ff88;
+    color: #00ff88; font-size: 1.5rem; padding: 15px; border-radius: 10px;
+    cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent;
+    display: flex; align-items: center; justify-content: center;
+}
+.btn:active { background: #00ff88; color: #000; box-shadow: 0 0 15px #00ff88; }
+
+.up { grid-column: 2; }
+.left { grid-column: 1; grid-row: 2; }
+.down { grid-column: 2; grid-row: 2; }
+.right { grid-column: 3; grid-row: 2; }
+
+.hidden { display: none; }
+#game-over { position: absolute; background: rgba(0,0,0,0.85); padding: 30px; border-radius: 15px; text-align: center; backdrop-filter: blur(5px); z-index: 10; top: 30%; }
+.restart-btn { background: #00ff88; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; margin-top: 15px; }
