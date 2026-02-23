@@ -11,7 +11,7 @@ This project demonstrates fundamental game logic, DOM manipulation, and responsi
 
 
 <p align="center">
-  <img src="preview.png" width="600">
+  <img src="preview.png" width="300">
 </p>
 
 ---
